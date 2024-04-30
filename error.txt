@@ -1,0 +1,25 @@
+====================[ Build | net_4_4_1_postgresql | Debug ]====================
+"C:\Programs\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" --build C:\Users\Fedot\Desktop\cpp\workspace_net\net_4_4_1_postgresql\cmake-build-debug --target net_4_4_1_postgresql -j 14
+[1/3] Building CXX object CMakeFiles/net_4_4_1_postgresql.dir/db_users.cpp.obj
+[2/3] Building CXX object CMakeFiles/net_4_4_1_postgresql.dir/main.cpp.obj
+FAILED: CMakeFiles/net_4_4_1_postgresql.dir/main.cpp.obj 
+C:\Programs\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE  -IC:/Users/Fedot/Desktop/cpp/workspace_net/net_4_4_1_postgresql/cmake-build-debug/libpqxx-build/include -IC:/Programs/dev/libpqxx-7.9.0/include -g -std=gnu++20 -fdiagnostics-color=always -MD -MT CMakeFiles/net_4_4_1_postgresql.dir/main.cpp.obj -MF CMakeFiles\net_4_4_1_postgresql.dir\main.cpp.obj.d -o CMakeFiles/net_4_4_1_postgresql.dir/main.cpp.obj -c C:/Users/Fedot/Desktop/cpp/workspace_net/net_4_4_1_postgresql/main.cpp
+C:/Users/Fedot/Desktop/cpp/workspace_net/net_4_4_1_postgresql/main.cpp: In function 'void PrintClients(DBUsers&, std::vector<int>)':
+C:/Users/Fedot/Desktop/cpp/workspace_net/net_4_4_1_postgresql/main.cpp:11:74: error: use of 'auto DBUsers::find_client_data_by_id(int)' before deduction of 'auto'
+   11 |         auto [first_name, last_name, email] = *(db.find_client_data_by_id(id).begin());
+      |                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+C:/Users/Fedot/Desktop/cpp/workspace_net/net_4_4_1_postgresql/main.cpp: In function 'void PrintClientPhones(DBUsers&, std::vector<int>)':
+C:/Users/Fedot/Desktop/cpp/workspace_net/net_4_4_1_postgresql/main.cpp:18:61: error: use of 'auto DBUsers::find_client_phone_by_id(int)' before deduction of 'auto'
+   18 |         auto [user_id, phone] = *(db.find_client_phone_by_id(id).begin());
+      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+C:/Users/Fedot/Desktop/cpp/workspace_net/net_4_4_1_postgresql/main.cpp: In function 'int main()':
+C:/Users/Fedot/Desktop/cpp/workspace_net/net_4_4_1_postgresql/main.cpp:108:43: error: use of 'auto DBUsers::find_client(const ClientData&)' before deduction of 'auto'
+  108 |         auto res_it = db_users.find_client(client_data);
+      |                       ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+C:/Users/Fedot/Desktop/cpp/workspace_net/net_4_4_1_postgresql/main.cpp:117:58: error: use of 'auto DBUsers::find_client_data_by_id(int)' before deduction of 'auto'
+  117 |         auto res_client = db_users.find_client_data_by_id(id);
+      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+C:/Users/Fedot/Desktop/cpp/workspace_net/net_4_4_1_postgresql/main.cpp:122:63: error: use of 'auto DBUsers::find_client_phone_by_user_id(int)' before deduction of 'auto'
+  122 |         auto res_phone = db_users.find_client_phone_by_user_id(id);
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+ninja: build stopped: subcommand failed.
